@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.math.epidemic.Controller.AllModelController">
+    <children>
+        <TabPane prefHeight="430.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="SIR">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="600.0">
+                            <children>
+                                <TextField fx:id="susceptibleField" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="74.0" text="80" />
+                                <TextField fx:id="infectedField" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="74.0" text="12" />
+                                <TextField fx:id="recoveredField" layoutX="14.0" layoutY="165.0" prefHeight="25.0" prefWidth="74.0" text="8" />
+                                <TextField fx:id="contactField" layoutX="14.0" layoutY="210.0" prefHeight="25.0" prefWidth="74.0" text="0.01" />
+                                <TextField fx:id="influenceTimeField" layoutX="14.0" layoutY="255.0" prefHeight="25.0" prefWidth="74.0" text="0.5" />
+                                <Label layoutX="9.0" layoutY="58.0" text="Доля здоровых" />
+                                <Label layoutX="12.0" layoutY="100.0" text="Доля больных" />
+                                <Label layoutX="19.0" layoutY="145.0" text="Доля поправившихся" />
+                                <Label layoutX="14.0" layoutY="192.0" text="Частота контактов" />
+                                <Label layoutX="14.0" layoutY="237.0" text="Время болезни" />
+                                <Button fx:id="sirButton" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#sirClickEnter" text="Расчёт" />
+                                <LineChart fx:id="sirLineChart" layoutX="120.0" prefHeight="385.0" prefWidth="475.0">
+                                    <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                    </yAxis>
+                                </LineChart>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="SIRmod">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="modSusceptibleField" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="74.0" text="80" />
+                        <TextField fx:id="modInfectedField" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="74.0" text="12" />
+                        <TextField fx:id="modRecoveredField" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="74.0" text="8" />
+                        <TextField fx:id="modContactField" layoutX="14.0" layoutY="165.0" prefHeight="25.0" prefWidth="74.0" text="0.01" />
+                        <TextField fx:id="modInfluenceTimeField" layoutX="14.0" layoutY="210.0" prefHeight="25.0" prefWidth="74.0" text="0.5" />
+                        <TextField fx:id="modDeathRation" layoutX="14.0" layoutY="255.0" prefHeight="25.0" prefWidth="74.0" text="0.07" />
+                        <Label layoutX="17.0" layoutY="55.0" text="Доля больных" />
+                        <LineChart fx:id="modLineChart" layoutX="120.0" prefHeight="385.0" prefWidth="475.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label layoutX="14.0" layoutY="10.0" text="Доля здоровых" />
+                        <Label layoutX="14.0" layoutY="100.0" text="Доля поправившихся" />
+                        <Label layoutX="14.0" layoutY="145.0" text="Частота контактов" />
+                        <Label layoutX="15.0" layoutY="192.0" text="Время болезни" />
+                        <Label layoutX="17.0" layoutY="235.0" prefHeight="17.0" prefWidth="121.0" text="Прирост населения" />
+                        <Button fx:id="modButton" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#modClickEnter" text="Расчёт" />
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="SIS">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="sisSusceptibleField" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="74.0" text="90" />
+                        <TextField fx:id="sisInfectedField" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="74.0" text="10" />
+                        <TextField fx:id="sisContactField" layoutX="14.0" layoutY="165.0" prefHeight="25.0" prefWidth="74.0" text="0.01" />
+                        <TextField fx:id="sisInfluenceTimeField" layoutX="14.0" layoutY="210.0" prefHeight="25.0" prefWidth="74.0" text="0.5" />
+                        <Label layoutX="15.0" layoutY="58.0" text="Доля здоровых" />
+                        <Label layoutX="11.0" layoutY="100.0" text="Доля больных" />
+                        <Label layoutX="14.0" layoutY="145.0" text="Частота контактов" />
+                        <Label layoutX="15.0" layoutY="190.0" text="Время болезни" />
+                        <TextField fx:id="sisDeathRation" layoutX="14.0" layoutY="255.0" prefHeight="25.0" prefWidth="74.0" text="0.05" />
+                        <Label layoutX="11.0" layoutY="235.0" text="Прирост населения" />
+                        <LineChart fx:id="sisLineChart" layoutX="120.0" prefHeight="385.0" prefWidth="475.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="sisButton" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#sisClickEnter" text="Расчёт" />
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="SIRS">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="sirsSusceptibleField" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="74.0" text="78" />
+                        <TextField fx:id="sirsInfectedField" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="74.0" text="12" />
+                        <TextField fx:id="sirsDeathRation" layoutX="14.0" layoutY="255.0" prefHeight="25.0" prefWidth="74.0" text="0.03" />
+                        <TextField fx:id="sirsContactField" layoutX="14.0" layoutY="165.0" prefHeight="25.0" prefWidth="74.0" text="0.01" />
+                        <TextField fx:id="sirsRecoveredField" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="74.0" text="10" />
+                        <TextField fx:id="sirsInfluenceTimeField" layoutX="14.0" layoutY="210.0" prefHeight="25.0" prefWidth="74.0" text="0.5" />
+                        <TextField fx:id="sirsLossOfImmunity" layoutX="12.0" layoutY="299.0" prefHeight="25.0" prefWidth="74.0" text="0.15" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Доля здоровых" />
+                        <Label layoutX="14.0" layoutY="55.0" text="Доля больных" />
+                        <Label layoutX="14.0" layoutY="100.0" text="Доля поправившихся" />
+                        <Label layoutX="14.0" layoutY="145.0" text="Частота контактов" />
+                        <Label layoutX="14.0" layoutY="190.0" text="Время болезни" />
+                        <Label layoutX="14.0" layoutY="235.0" text="Прирост населения" />
+                        <Label layoutX="12.0" layoutY="280.0" text="Коэф. иммунитета" />
+                        <LineChart fx:id="sirsLineChart" layoutX="120.0" prefHeight="385.0" prefWidth="475.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="sirsButton" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#sirsClickEnter" text="Расчёт" />
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

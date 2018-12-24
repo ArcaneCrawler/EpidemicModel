@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.math.epidemic.Controller.AboutLayoutController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Об эпидемиях">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="633.0">
+                     <children>
+                        <TextArea layoutX="8.0" layoutY="7.0" prefHeight="352.0" prefWidth="586.0" text="Эпидемии - это очень плохо&#10;&#10;Не надо так!" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Модель SIR">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea layoutX="8.0" layoutY="7.0" prefHeight="355.0" prefWidth="592.0" text="    Традиционной моделью, описывающей процесс развития эпидемии, является модель SIR&#10;(Susceptible-Infected-Recovered). В данной модели исследуемая популяция делится на три подгруппы:&#10;&#9;S(t) — восприимчивые к инфекции, количество неинфицированных к моменту времени t;&#10;&#9;I(t) — инфицированные;&#10;&#9;R(t) — излечившиеся от болезни.&#10;Модель эпидемии описывается с помощью следующих дифференциальных уравнений:&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;где β — частота контактов между представителями,&#10;      1/γ — средняя продолжительность периода заболевания.&#10;Данная модель основана на предположении, что скорости заражения инфекцией и&#10; излечения от нее значительно превосходят темпы рождаемости и смертности, вследствие&#10; чего упомянутые факторы в модели игнорируются." />
+                        <ImageView fx:id="sirView" fitHeight="137.0" fitWidth="139.0" layoutX="198.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Модель SIR (mod)">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="633.0">
+                     <children>
+                        <TextArea layoutX="3.0" layoutY="3.0" prefHeight="366.0" prefWidth="594.0" text="&#10;    Для некоторых заболеваний особенно важно учитывать приток в популяцию новых индивидов,&#10;восприимчивых к вирусу. Поэтому необходимо принять во внимание темпы рождаемости и с&#10;мертности. Сделаем предположение, что эти темпы одинаковы и их можно описать с помощью &#10;постоянного коэффициента μ. Уравнения модели SIR с учетом этих допущений будут выглядеть &#10;следующим образом:" />
+                        <ImageView fx:id="sirmView" fitHeight="167.0" fitWidth="227.0" layoutX="178.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Модель SIS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="633.0">
+                     <children>
+                        <TextArea layoutX="8.0" layoutY="6.0" prefHeight="357.0" prefWidth="584.0" text="  &#10;&#10;     Модель SIS можно получить из модели SIR в предположении, что излечившиеся индивиды не&#10;приобретают иммунитет к заболеванию, т.е. снова могут перейти в группу восприимчивых. &#10;Это особенно актуально для ОРВИ, характеризующихся большим разнообразием типов вируса. &#10;     Убрав уравнение, описывающее прирост выздоровевшей части населения, получим систему:&#10;" />
+                        <ImageView fx:id="sisView" fitHeight="154.0" fitWidth="283.0" layoutX="159.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Модель SIRS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="633.0">
+                     <children>
+                        <TextArea layoutX="4.0" layoutY="6.0" prefHeight="360.0" prefWidth="590.0" text="     &#10;&#10;       Данная модель предполагает, что индивиды, которые уже приобрели иммунитет, утрачивают его &#10;через некоторое время и вновь переходят в группу восприимчивых. &#10;      Дифференциальные уравнения имеют вид:&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;где f — средняя скорость потери иммунитета." />
+                        <ImageView fx:id="sirsView" fitHeight="181.0" fitWidth="273.0" layoutX="163.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
